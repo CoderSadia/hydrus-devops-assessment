@@ -23,9 +23,13 @@ docker compose up --build
 curl http://localhost:8000/health
 curl http://localhost:8000/api/items
 
-## Author
-Sadia Islam
-
 ## Terraform Plan
 Plan: 54 to add, 0 to change, 0 to destroy
 AWS Resources: VPC, EKS, ECR, Subnets, Security Groups
+
+## Docker Images (Docker Hub)
+- Frontend: https://hub.docker.com/r/codersadia/hydrus-frontend
+- Backend: https://hub.docker.com/r/codersadia/hydrus-backend
+
+## Author
+Sadia Islam
