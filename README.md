@@ -24,4 +24,8 @@ curl http://localhost:8000/health
 curl http://localhost:8000/api/items
 
 ## Author
-Sadia - DevOps Engineer
+Sadia Islam
+
+## Terraform Plan
+Plan: 54 to add, 0 to change, 0 to destroy
+AWS Resources: VPC, EKS, ECR, Subnets, Security Groups
