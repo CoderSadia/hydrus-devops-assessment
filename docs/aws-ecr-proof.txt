@@ -1,0 +1,32 @@
+{
+    "repositories": [
+        {
+            "repositoryArn": "arn:aws:ecr:ap-southeast-1:359497609200:repository/hydrus-backend",
+            "registryId": "359497609200",
+            "repositoryName": "hydrus-backend",
+            "repositoryUri": "359497609200.dkr.ecr.ap-southeast-1.amazonaws.com/hydrus-backend",
+            "createdAt": "2026-05-12T02:13:54.997000+06:00",
+            "imageTagMutability": "MUTABLE",
+            "imageScanningConfiguration": {
+                "scanOnPush": false
+            },
+            "encryptionConfiguration": {
+                "encryptionType": "AES256"
+            }
+        },
+        {
+            "repositoryArn": "arn:aws:ecr:ap-southeast-1:359497609200:repository/hydrus-frontend",
+            "registryId": "359497609200",
+            "repositoryName": "hydrus-frontend",
+            "repositoryUri": "359497609200.dkr.ecr.ap-southeast-1.amazonaws.com/hydrus-frontend",
+            "createdAt": "2026-05-12T02:13:55+06:00",
+            "imageTagMutability": "MUTABLE",
+            "imageScanningConfiguration": {
+                "scanOnPush": false
+            },
+            "encryptionConfiguration": {
+                "encryptionType": "AES256"
+            }
+        }
+    ]
+}
