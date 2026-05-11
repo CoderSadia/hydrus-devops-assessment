@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hydrus App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            color: #333;
+        }
+        .item {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .status {
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .ok { background-color: #d4edda; color: #155724; }
+        .error { background-color: #f8d7da; color: #721c24; }
+    </style>
+</head>
+<body>
+    <h1>🚀 Hydrus App</h1>
+
+    <h2>API Status</h2>
+    <div id="status" class="status">Checking...</div>
+
+    <h2>Items</h2>
+    <div id="items">Loading...</div>
+
+    <script>
+        const API_URL = window.API_BASE_URL || 'http://localhost:8000';
+
+        // Health check
+        fetch(`${API_URL}/health`)
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById('status').className = 'status ok';
+                document.getElementById('status').innerHTML = '✅ API is running!';
+            })
+            .catch(err => {
+                document.getElementById('status').className = 'status error';
+                document.getElementById('status').innerHTML = '❌ API not reachable';
+            });
+
+        // Get items
+        fetch(`${API_URL}/api/items`)
+            .then(res => res.json())
+            .then(data => {
+                const html = data.map(item => `
+                    <div class="item">
+                        <h3>${item.name}</h3>
+                        <p>${item.description}</p>
+                    </div>
+                `).join('');
+                document.getElementById('items').innerHTML = html;
+            })
+            .catch(err => {
+                document.getElementById('items').innerHTML = 'Error loading items';
+            });
+    </script>
+</body>
+</html>
